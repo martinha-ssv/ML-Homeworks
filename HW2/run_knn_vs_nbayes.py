@@ -19,14 +19,8 @@ def knn_vs_nbayes(df, scale=False):
             MINMAXSCALER = MinMaxScaler()
             MINMAXSCALER.fit_transform(train[['age','trestbps','chol','thalach','oldpeak']])
 
-            #target = train['target'].copy().reset_index(drop=True)
             train[['age','trestbps','chol','thalach','oldpeak']] = MINMAXSCALER.transform(train[['age','trestbps','chol','thalach','oldpeak']].copy())
-            #train['target'] = target
-
-            #target = test['target'].copy().reset_index(drop=True)
-            test[['age','trestbps','chol','thalach','oldpeak']] = MINMAXSCALER.transform(text[['age','trestbps','chol','thalach','oldpeak']].copy())
-            #test['target'] = target
-            train.head()
+            test[['age','trestbps','chol','thalach','oldpeak']] = MINMAXSCALER.transform(test[['age','trestbps','chol','thalach','oldpeak']].copy())            #test['target'] = target
 
         knn_accuracies.append(fit_and_score(knn, train, test))
         nbayes_accuracies.append(fit_and_score(nbayes, train, test))
