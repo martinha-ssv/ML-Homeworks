@@ -1,0 +1,3 @@
+6. Ao comparar os boxplot da regressão linear e do MLP sem ativação, observamos um comportamento semelhante, visto que a MLP sem ativação se tem um comportamento
+muito parecido ao da regressão linear, visto que nenhum dos dois consegue lidar com amostras não lineares, (MAE elevado).
+    
